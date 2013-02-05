@@ -16,8 +16,9 @@ use JMS\SerializerBundle\Annotation\Accessor;
  */
 class Booking {
     /**
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\Column(type="string",length=50)
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @Expose
      */
     protected $id;
