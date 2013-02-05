@@ -1,0 +1,9 @@
+{% extends 'CuaroundSiteBundle::base.html.twig' %}
+
+{% block content %}
+<BR />
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit form edit_account" id="edit_account_form" name="edit_account_form">
+    {{ form_widget(form) }}
+    <input type="submit" />
+</form>
+{% endblock %}
