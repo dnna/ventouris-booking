@@ -128,6 +128,6 @@ class Booking {
     }
 
     public function __toString() {
-        return $this->getName();
+        return $this->getVenueName().' - '.$this->getBookerName();
     }
 }
