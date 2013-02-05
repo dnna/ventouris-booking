@@ -3,10 +3,10 @@ imports:
     - { resource: security.yml }
     - { resource: '@VentourisAdminBundle/Resources/config/services.xml' }
     - { resource: '@VentourisAdminBundle/Resources/config/sonata.yml' }
-    - { resource: '@VentourisUserBundle/Resources/config/services.yml' }
 
 framework:
     #esi:             ~
+    trusted_proxies: ~
     translator:      { fallback: %locale% }
     secret:          %secret%
     router:
@@ -70,22 +70,6 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: Ventouris\UserBundle\Entity\User
-    from_email:
-        address:        notification@cuaround.gr
-        sender_name:    Ventouris
-    registration:
-        confirmation:
-            enabled:    true # change to true for required email confirmation
-            template:   FOSUserBundle:Registration:email.txt.twig
-        form:
-            type: ventouris_user_registration
-            handler: ventouris_user.form.handler.registration
-    profile:
-        form:
-            type: ventouris_user_profile
-            handler: ventouris_user.form.handler.profile
-    service:
-        user_manager: ventouris_user.my_user_manager
 
 jms_serializer:
     metadata:

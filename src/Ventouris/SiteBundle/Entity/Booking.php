@@ -14,7 +14,7 @@ use JMS\SerializerBundle\Annotation\Accessor;
  * @ORM\Table()
  * @ExclusionPolicy("all")
  */
-class MusicType {
+class Booking {
     /**
      * @ORM\Id
      * @ORM\Column(type="string",length=50)
@@ -23,18 +23,40 @@ class MusicType {
     protected $id;
 
     /**
-     * @ORM\Column(name="name", type="string")
-     *
-     * @Assert\MinLength(limit="3", message="The name is too short.")
-     * @Assert\MaxLength(limit="50", message="The name is too long.")
+     * @ORM\Column(name="booking_date", type="date")
      * @Expose
      */
-    protected $name;
-
+    protected $date;
     /**
-     * @ORM\ManyToMany(targetEntity="Destination", mappedBy="musictypes", cascade={"persist"})
+     * @ORM\Column(name="venue_name", type="string")
+     * @Expose
      */
-    protected $destinations;
+    protected $venueName;
+    /**
+     * @ORM\Column(name="booker_name", type="string")
+     * @Expose
+     */
+    protected $bookerName;
+    /**
+     * @ORM\Column(name="pr_name", type="string")
+     * @Expose
+     */
+    protected $prName;
+    /**
+     * @ORM\Column(name="maitre_name", type="string")
+     * @Expose
+     */
+    protected $maitreName;
+    /**
+     * @ORM\Column(name="price", type="float")
+     * @Expose
+     */
+    protected $price;
+    /**
+     * @ORM\Column(name="paid", type="boolean")
+     * @Expose
+     */
+    protected $paid;
 
     public function __construct() {
         $this->destinations = new ArrayCollection();
@@ -48,20 +70,60 @@ class MusicType {
         $this->id = $id;
     }
 
-    public function getName() {
-        return $this->name;
+    public function getDate() {
+        return $this->date;
     }
 
-    public function setName($name) {
-        $this->name = $name;
+    public function setDate($date) {
+        $this->date = $date;
     }
 
-    public function getDestinations() {
-        return $this->destinations;
+    public function getVenueName() {
+        return $this->venueName;
     }
 
-    public function setDestinations($destinations) {
-        $this->destinations = $destinations;
+    public function setVenueName($venueName) {
+        $this->venueName = $venueName;
+    }
+
+    public function getBookerName() {
+        return $this->bookerName;
+    }
+
+    public function setBookerName($bookerName) {
+        $this->bookerName = $bookerName;
+    }
+
+    public function getPrName() {
+        return $this->prName;
+    }
+
+    public function setPrName($prName) {
+        $this->prName = $prName;
+    }
+
+    public function getMaitreName() {
+        return $this->maitreName;
+    }
+
+    public function setMaitreName($maitreName) {
+        $this->maitreName = $maitreName;
+    }
+
+    public function getPrice() {
+        return $this->price;
+    }
+
+    public function setPrice($price) {
+        $this->price = $price;
+    }
+
+    public function getPaid() {
+        return $this->paid;
+    }
+
+    public function setPaid($paid) {
+        $this->paid = $paid;
     }
 
     public function __toString() {

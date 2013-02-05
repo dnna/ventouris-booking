@@ -8,8 +8,13 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 
-class MusicTypeAdmin extends Admin
+class BookingAdmin extends Admin
 {
+    protected $datagridValues = array(
+        '_sort_order' => 'DESC', // Descendant ordering (default = 'ASC')
+        '_sort_by' => 'date' // name of the ordered field (default = the model id
+    );
+
     /**
      * @param \Sonata\AdminBundle\Show\ShowMapper $showMapper
      *
@@ -19,6 +24,13 @@ class MusicTypeAdmin extends Admin
     {
         $showMapper
             ->add('id')
+            ->add('date')
+            ->add('venueName')
+            ->add('bookerName')
+            ->add('prName')
+            ->add('maitreName')
+            ->add('price')
+            ->add('paid')
         ;
     }
 
@@ -30,8 +42,13 @@ class MusicTypeAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('id')
-            ->add('name')
+            ->add('date')
+            ->add('venueName')
+            ->add('bookerName')
+            ->add('prName')
+            ->add('maitreName')
+            ->add('price')
+            ->add('paid', null, array('required' => false))
         ;
     }
 
@@ -51,7 +68,13 @@ class MusicTypeAdmin extends Admin
                 'actions' => $actions
             ));
         $listMapper->addIdentifier('id')
-            ->add('name')
+            ->add('date')
+            ->add('venueName')
+            ->add('bookerName')
+            ->add('prName')
+            ->add('maitreName')
+            ->add('price')
+            ->add('paid')
         ;
     }
 
@@ -63,8 +86,13 @@ class MusicTypeAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
-            ->add('name')
+            ->add('date')
+            ->add('venueName')
+            ->add('bookerName')
+            ->add('prName')
+            ->add('maitreName')
+            ->add('price')
+            ->add('paid')
         ;
     }
 }

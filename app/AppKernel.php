@@ -27,6 +27,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             // JMS
             new JMS\SerializerBundle\JMSSerializerBundle($this),
+            // KNP
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             // Sonata
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),

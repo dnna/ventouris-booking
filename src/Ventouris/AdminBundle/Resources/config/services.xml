@@ -5,11 +5,11 @@
         <service id="sonata.admin.bookings" class="Ventouris\AdminBundle\Admin\BookingAdmin">
            <tag name="sonata.admin"
                 manager_type="orm"
-                group="Misc"
-                label="Music Types"
+                group="General"
+                label="Bookings"
                 />
            <argument />
-           <argument>Ventouris\SiteBundle\Entity\MusicType</argument>
+           <argument>Ventouris\SiteBundle\Entity\Booking</argument>
            <argument>SonataAdminBundle:CRUD</argument>
            <call method="setTranslationDomain">
                <argument>VentourisAdminBundle</argument>

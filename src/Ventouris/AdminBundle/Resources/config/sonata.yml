@@ -25,7 +25,6 @@ sonata_admin:
     title_logo: /public/ventouris_logo.png
     templates:
         # default global templates
-        layout:  SonataAdminBundle::layout.html.twig
         ajax:    SonataAdminBundle::ajax_layout.html.twig
 
         # default actions templates, should extend a global templates
@@ -35,6 +34,3 @@ sonata_admin:
         blocks:
             # display a dashboard block
             - { position: left, type: sonata.admin.block.admin_list }
-
-        groups:
-            #default: ~
