@@ -1,6 +1,6 @@
 <?php
 
-namespace Cuaround\SiteBundle\Controller;
+namespace Ventouris\SiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -18,7 +18,7 @@ class DefaultController extends Controller {
         // Prefered geographical area (Gkazi, Kolonaki etc)
         // Prefered transportation means (car, bus, metro etc)
         // Arrival time
-        return $this->render('CuaroundSiteBundle:Default:index.html.twig', array());
+        return $this->render('VentourisSiteBundle:Default:index.html.twig', array());
     }
 
     /**
@@ -26,13 +26,13 @@ class DefaultController extends Controller {
      * @Template
      */
     /*public function add_municipalitiesAction() {
-        foreach(\Cuaround\SiteBundle\Entity\Municipality::getMunicipalities() as $curMunicipality) {
-            $municipality = new \Cuaround\SiteBundle\Entity\Municipality();
+        foreach(\Ventouris\SiteBundle\Entity\Municipality::getMunicipalities() as $curMunicipality) {
+            $municipality = new \Ventouris\SiteBundle\Entity\Municipality();
             $municipality->setName($curMunicipality);
             $this->get('doctrine')->getEntityManager()->persist($municipality);
             $this->get('doctrine')->getEntityManager()->flush();
         }
-        return $this->render('CuaroundSiteBundle:Default:index.html.twig', array());
+        return $this->render('VentourisSiteBundle:Default:index.html.twig', array());
     }*/
 
 }

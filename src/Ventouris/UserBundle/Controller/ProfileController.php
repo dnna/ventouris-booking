@@ -1,6 +1,6 @@
 <?php
 
-namespace Cuaround\UserBundle\Controller;
+namespace Ventouris\UserBundle\Controller;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -46,7 +46,7 @@ class ProfileController extends BaseController {
         $theme = 'fos_user_theme';
         //var_dump($uform->createView()); die();
 
-        return $this->container->get('templating')->renderResponse('CuaroundUserBundle:Profile:edit.html.twig', array(
+        return $this->container->get('templating')->renderResponse('VentourisUserBundle:Profile:edit.html.twig', array(
                     'form' => $uform->createView(),
                     //'password_form' => $pform->createView(),
                     'theme' => $theme,

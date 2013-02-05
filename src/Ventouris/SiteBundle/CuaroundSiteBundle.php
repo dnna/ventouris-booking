@@ -1,9 +1,9 @@
 <?php
 
-namespace Cuaround\SiteBundle;
+namespace Ventouris\SiteBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class CuaroundSiteBundle extends Bundle
+class VentourisSiteBundle extends Bundle
 {
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Cuaround\SiteBundle\Entity\Repositories;
+namespace Ventouris\SiteBundle\Entity\Repositories;
 
 use Doctrine\ORM\EntityRepository;
 use Pagerfanta\Pagerfanta,

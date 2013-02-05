@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Cuaround\UserBundle\Extension;
+namespace Ventouris\UserBundle\Extension;
 
 use FOS\UserBundle\Entity\UserManager;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;

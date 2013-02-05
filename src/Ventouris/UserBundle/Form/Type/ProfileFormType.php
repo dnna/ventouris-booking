@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Cuaround\UserBundle\Form\Type;
+namespace Ventouris\UserBundle\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface;
 use FOS\UserBundle\Form\Type\ProfileFormType as BaseType;
@@ -28,6 +28,6 @@ class ProfileFormType extends BaseType
 
     public function getName()
     {
-        return 'cuaround_user_profile';
+        return 'ventouris_user_profile';
     }
 }

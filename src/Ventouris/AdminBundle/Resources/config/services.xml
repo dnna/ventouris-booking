@@ -1,131 +1,18 @@
 <container xmlns="http://symfony.com/schema/dic/services"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
-    <services>
-        <service id="form.type.oh_google_maps" class="Oh\GoogleMapFormTypeBundle\Form\Type\GoogleMapType">
-            <tag name="form.type" label="oh_google_maps" alias="oh_google_maps"/>
-        </service>
-        <service id="sonata.admin.dnna.model_manager" class="Cuaround\AdminBundle\Model\DnnaModelManager">
-            <argument type="service" id="doctrine" />
-        </service>
-        <service id="sonata.admin.dnna.datagridbuilder" class="Cuaround\AdminBundle\Builder\DnnaDatagridBuilder">
-            <argument type="service" id="form.factory" />
-            <argument type="service" id="sonata.admin.builder.filter.factory" />
-            <argument type="service" id="sonata.admin.guesser.orm_datagrid_chain" />
-        </service>
-        <service id="sonata.admin.block.overview" class="Cuaround\AdminBundle\Block\OverviewService">
-            <tag name="sonata.block" />
-            <argument>sonata.admin.block.overview</argument>
-            <argument type="service" id="templating" />
-            <argument type="service" id="service_container" />
-        </service>
-        <service id="sonata.admin.users" class="Cuaround\AdminBundle\Admin\UserAdmin">
-           <tag name="sonata.admin"
-                manager_type="orm"
-                group="Users"
-                label="Users"
-                model_manager="sonata.admin.dnna.model_manager"
-                datagrid_builder="sonata.admin.dnna.datagridbuilder"
-                />
-           <argument />
-           <argument>Cuaround\UserBundle\Entity\User</argument>
-           <argument>CuaroundAdminBundle:User</argument>
-           <call method="setTranslationDomain">
-               <argument>CuaroundAdminBundle</argument>
-           </call>
-           <call method="setUserManager">
-               <argument type='service' id='fos_user.user_manager' />
-           </call>
-       </service>
-        <service id="sonata.admin.destinations" class="Cuaround\AdminBundle\Admin\DestinationAdmin">
-           <tag name="sonata.admin"
-                manager_type="orm"
-                group="Destinations/Zones/Tables"
-                label="Destinations"
-                />
-           <argument />
-           <argument>Cuaround\SiteBundle\Entity\Destination</argument>
-           <argument>SonataAdminBundle:CRUD</argument>
-           <call method="setTranslationDomain">
-               <argument>CuaroundAdminBundle</argument>
-           </call>
-       </service>
-        <service id="sonata.admin.zones" class="Cuaround\AdminBundle\Admin\ZoneAdmin">
-           <tag name="sonata.admin"
-                manager_type="orm"
-                group="Destinations/Zones/Tables"
-                label="Zones"
-                />
-           <argument />
-           <argument>Cuaround\SiteBundle\Entity\Zone</argument>
-           <argument>SonataAdminBundle:CRUD</argument>
-           <call method="setTranslationDomain">
-               <argument>CuaroundAdminBundle</argument>
-           </call>
-       </service>
-        <service id="sonata.admin.tables" class="Cuaround\AdminBundle\Admin\TableAdmin">
-           <tag name="sonata.admin"
-                manager_type="orm"
-                group="Destinations/Zones/Tables"
-                label="Tables"
-                />
-           <argument />
-           <argument>Cuaround\SiteBundle\Entity\Table</argument>
-           <argument>SonataAdminBundle:CRUD</argument>
-           <call method="setTranslationDomain">
-               <argument>CuaroundAdminBundle</argument>
-           </call>
-       </service>
-        <service id="sonata.admin.municipalities" class="Cuaround\AdminBundle\Admin\MunicipalityAdmin">
-           <tag name="sonata.admin"
-                manager_type="orm"
-                group="Misc"
-                label="Municipalities"
-                />
-           <argument />
-           <argument>Cuaround\SiteBundle\Entity\Municipality</argument>
-           <argument>SonataAdminBundle:CRUD</argument>
-           <call method="setTranslationDomain">
-               <argument>CuaroundAdminBundle</argument>
-           </call>
-       </service>
-        <service id="sonata.admin.musictypes" class="Cuaround\AdminBundle\Admin\MusicTypeAdmin">
+    <services>        
+        <service id="sonata.admin.bookings" class="Ventouris\AdminBundle\Admin\BookingAdmin">
            <tag name="sonata.admin"
                 manager_type="orm"
                 group="Misc"
                 label="Music Types"
                 />
            <argument />
-           <argument>Cuaround\SiteBundle\Entity\MusicType</argument>
+           <argument>Ventouris\SiteBundle\Entity\MusicType</argument>
            <argument>SonataAdminBundle:CRUD</argument>
            <call method="setTranslationDomain">
-               <argument>CuaroundAdminBundle</argument>
-           </call>
-       </service>
-        <service id="sonata.admin.transporttypes" class="Cuaround\AdminBundle\Admin\TransportTypeAdmin">
-           <tag name="sonata.admin"
-                manager_type="orm"
-                group="Misc"
-                label="Transport Types"
-                />
-           <argument />
-           <argument>Cuaround\SiteBundle\Entity\TransportType</argument>
-           <argument>SonataAdminBundle:CRUD</argument>
-           <call method="setTranslationDomain">
-               <argument>CuaroundAdminBundle</argument>
-           </call>
-       </service>
-        <service id="sonata.admin.purposes" class="Cuaround\AdminBundle\Admin\PurposeAdmin">
-           <tag name="sonata.admin"
-                manager_type="orm"
-                group="Misc"
-                label="Purposes"
-                />
-           <argument />
-           <argument>Cuaround\SiteBundle\Entity\Purpose</argument>
-           <argument>SonataAdminBundle:CRUD</argument>
-           <call method="setTranslationDomain">
-               <argument>CuaroundAdminBundle</argument>
+               <argument>VentourisAdminBundle</argument>
            </call>
        </service>
    </services>

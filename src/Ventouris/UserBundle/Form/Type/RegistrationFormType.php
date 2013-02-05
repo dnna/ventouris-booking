@@ -1,6 +1,6 @@
 <?php
 
-namespace Cuaround\UserBundle\Form\Type;
+namespace Ventouris\UserBundle\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface;
 use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
@@ -20,6 +20,6 @@ class RegistrationFormType extends BaseType
 
     public function getName()
     {
-        return 'cuaround_user_registration';
+        return 'ventouris_user_registration';
     }
 }

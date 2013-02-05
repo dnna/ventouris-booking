@@ -1,9 +1,9 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
-    - { resource: '@CuaroundAdminBundle/Resources/config/services.xml' }
-    - { resource: '@CuaroundAdminBundle/Resources/config/sonata.yml' }
-    - { resource: '@CuaroundUserBundle/Resources/config/services.yml' }
+    - { resource: '@VentourisAdminBundle/Resources/config/services.xml' }
+    - { resource: '@VentourisAdminBundle/Resources/config/sonata.yml' }
+    - { resource: '@VentourisUserBundle/Resources/config/services.yml' }
 
 framework:
     #esi:             ~
@@ -24,9 +24,6 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
-    form:
-        resources:
-            - 'CuaroundAdminBundle:Form:ohgooglemaps.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -51,10 +48,6 @@ doctrine:
         password: %database_password%
         charset:  UTF8
         #unix_socket:	/var/mysql/mysql.sock
-        types:
-            point: Cuaround\UserBundle\Wantlet\ORM\PointType
-        mapping_types:
-            point: string
     orm:
         dql:
             numeric_functions:
@@ -62,8 +55,6 @@ doctrine:
                               SIN: DoctrineExtensions\Query\Mysql\Sin
                               RADIANS: DoctrineExtensions\Query\Mysql\Radians
                               COS: DoctrineExtensions\Query\Mysql\Cos
-                              DISTANCE: Cuaround\UserBundle\Wantlet\ORM\Distance
-                              POINT_STR: Cuaround\UserBundle\Wantlet\ORM\PointStr
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
 
@@ -78,33 +69,23 @@ swiftmailer:
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
-    user_class: Cuaround\UserBundle\Entity\User
+    user_class: Ventouris\UserBundle\Entity\User
     from_email:
         address:        notification@cuaround.gr
-        sender_name:    Cuaround
+        sender_name:    Ventouris
     registration:
         confirmation:
             enabled:    true # change to true for required email confirmation
             template:   FOSUserBundle:Registration:email.txt.twig
         form:
-            type: cuaround_user_registration
-            handler: cuaround_user.form.handler.registration
+            type: ventouris_user_registration
+            handler: ventouris_user.form.handler.registration
     profile:
         form:
-            type: cuaround_user_profile
-            handler: cuaround_user.form.handler.profile
+            type: ventouris_user_profile
+            handler: ventouris_user.form.handler.profile
     service:
-        user_manager: cuaround_user.my_user_manager
-
-services:
-    cuaround.point.listener.prepersist:
-        class: Cuaround\SiteBundle\Extension\PointListener
-        tags:
-            - { name: doctrine.event_listener, event: prePersist }
-    cuaround.point.listener.preupdate:
-        class: Cuaround\SiteBundle\Extension\PointListener
-        tags:
-            - { name: doctrine.event_listener, event: preUpdate }
+        user_manager: ventouris_user.my_user_manager
 
 jms_serializer:
     metadata:

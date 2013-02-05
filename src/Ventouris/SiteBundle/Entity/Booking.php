@@ -1,5 +1,5 @@
 <?php
-namespace Cuaround\SiteBundle\Entity;
+namespace Ventouris\SiteBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -14,7 +14,7 @@ use JMS\SerializerBundle\Annotation\Accessor;
  * @ORM\Table()
  * @ExclusionPolicy("all")
  */
-class TransportType {
+class MusicType {
     /**
      * @ORM\Id
      * @ORM\Column(type="string",length=50)
@@ -31,6 +31,15 @@ class TransportType {
      */
     protected $name;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Destination", mappedBy="musictypes", cascade={"persist"})
+     */
+    protected $destinations;
+
+    public function __construct() {
+        $this->destinations = new ArrayCollection();
+    }
+
     public function getId() {
         return $this->id;
     }
@@ -45,6 +54,14 @@ class TransportType {
 
     public function setName($name) {
         $this->name = $name;
+    }
+
+    public function getDestinations() {
+        return $this->destinations;
+    }
+
+    public function setDestinations($destinations) {
+        $this->destinations = $destinations;
     }
 
     public function __toString() {

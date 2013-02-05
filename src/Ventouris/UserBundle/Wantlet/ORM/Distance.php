@@ -1,5 +1,5 @@
 <?php
-namespace Cuaround\UserBundle\Wantlet\ORM;
+namespace Ventouris\UserBundle\Wantlet\ORM;
 
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\Lexer;

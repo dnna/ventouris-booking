@@ -1,5 +1,5 @@
 <?php
-namespace Cuaround\UserBundle\Wantlet\ORM;
+namespace Ventouris\UserBundle\Wantlet\ORM;
 
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\Lexer;
@@ -7,7 +7,7 @@ use Doctrine\ORM\Query\Lexer;
 /**
  * POINT_STR function for querying using Point objects as parameters
  *
- * Usage: POINT_STR(:param) where param should be mapped to $point where $point is \Cuaround\UserBundle\Wantlet\ORM\Point
+ * Usage: POINT_STR(:param) where param should be mapped to $point where $point is \Ventouris\UserBundle\Wantlet\ORM\Point
  *        without any special typing provided (eg. so that it gets converted to string)
  */
 class PointStr extends FunctionNode {

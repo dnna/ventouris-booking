@@ -34,7 +34,7 @@ layout:
 
 security:
   login:
-    msg: "Συνδεθείτε στο Cuaround"
+    msg: "Συνδεθείτε στο Ventouris"
     facebook: "Συνδεθείτε με το Facebook"
     email: "Email"
     username: "Όνομα Χρήστη"
@@ -52,7 +52,7 @@ registration:
 
         Αν δεν το βρίσκεις έλεγξε τον φάκελο με τα ανεπιθύμητα.
   
-  msg: "Εγγραφείτε στο Cuaround"
+  msg: "Εγγραφείτε στο Ventouris"
   accept_terms_error: "Πρέπει να διαβάσετε και να αποδεχτείτε τους όρους χρήσης."
   terms_of_use: "Έχω διαβάσει και αποδεχτεί τους"
   terms_link: "όρους χρήσης"
@@ -74,7 +74,7 @@ registration:
 
             Ευχαριστούμε,
             
-            Η ομάδα του Cuaround.
+            Η ομάδα του Ventouris.
 
 
 
@@ -116,7 +116,7 @@ resetting:
 
             Για να αλλάξεις τον κωδικό σου ακολούθησε το link: %confirmationUrl%
             
-            Ευχαριστούμε, η ομάδα του Cuaround.
+            Ευχαριστούμε, η ομάδα του Ventouris.
 
 fos_user:
     username:

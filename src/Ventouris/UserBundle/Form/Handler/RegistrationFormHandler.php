@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Cuaround\UserBundle\Form\Handler;
+namespace Ventouris\UserBundle\Form\Handler;
 
 use FOS\UserBundle\Form\Handler\RegistrationFormHandler as BaseHandler;
 
@@ -22,7 +22,7 @@ class RegistrationFormHandler extends BaseHandler {
         if ('POST' == $this->request->getMethod()) {
 
             $user->setUsername($this->randomString());
-            $list = new \Cuaround\UserBundle\Entity\IgnoreMailList;
+            $list = new \Ventouris\UserBundle\Entity\IgnoreMailList;
             $list->setUser($user);
             $user->setIgnoreMailList($list);
 

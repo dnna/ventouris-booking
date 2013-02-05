@@ -1,5 +1,5 @@
 <?php
-namespace Cuaround\UserBundle\Wantlet\ORM;
+namespace Ventouris\UserBundle\Wantlet\ORM;
 
 /**
  * Point object for spatial mapping

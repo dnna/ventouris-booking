@@ -1,5 +1,5 @@
 <?php
-namespace Cuaround\UserBundle\Entity;
+namespace Ventouris\UserBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -14,7 +14,7 @@ use JMS\SerializerBundle\Annotation\Accessor;
 /**
  * @ORM\Entity
  * @ORM\Table(name="Users")
- * @ORM\Entity(repositoryClass="Cuaround\UserBundle\Entity\Repositories\UserRepository")
+ * @ORM\Entity(repositoryClass="Ventouris\UserBundle\Entity\Repositories\UserRepository")
  * @ExclusionPolicy("all")
  */
 class User extends BaseUser
@@ -98,7 +98,7 @@ class User extends BaseUser
     protected $birthday;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Cuaround\SiteBundle\Entity\MusicType")
+     * @ORM\ManyToMany(targetEntity="Ventouris\SiteBundle\Entity\MusicType")
      * @ORM\JoinTable(name="users_musictypes",
      *      joinColumns={@ORM\JoinColumn(name="participant_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="musictype_id", referencedColumnName="id")}
@@ -107,7 +107,7 @@ class User extends BaseUser
     protected $preferredMusic;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Cuaround\SiteBundle\Entity\TransportType")
+     * @ORM\ManyToMany(targetEntity="Ventouris\SiteBundle\Entity\TransportType")
      * @ORM\JoinTable(name="users_transports",
      *      joinColumns={@ORM\JoinColumn(name="participant_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="transporttype_id", referencedColumnName="id")}
@@ -146,14 +146,14 @@ class User extends BaseUser
     protected $lastpointupdate;
 
     /**
-     * @ORM\OneToMany(targetEntity="Cuaround\SiteBundle\Entity\Event\Participant", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Ventouris\SiteBundle\Entity\Event\Participant", mappedBy="user")
      */
     protected $participatedIn;
     	
     public function __construct() {
     	parent::__construct();
         $this->dateRegistered = new \DateTime('now');
-        $this->point = new \Cuaround\UserBundle\Wantlet\ORM\Point();
+        $this->point = new \Ventouris\UserBundle\Wantlet\ORM\Point();
         $this->lastpointupdate = new \DateTime('now');
     }
 

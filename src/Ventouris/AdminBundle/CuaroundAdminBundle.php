@@ -1,9 +1,9 @@
 <?php
 
-namespace Cuaround\AdminBundle;
+namespace Ventouris\AdminBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class CuaroundAdminBundle extends Bundle
+class VentourisAdminBundle extends Bundle
 {
 }

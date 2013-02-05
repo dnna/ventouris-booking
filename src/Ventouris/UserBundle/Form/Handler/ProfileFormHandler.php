@@ -1,6 +1,6 @@
 <?php
 
-namespace Cuaround\UserBundle\Form\Handler;
+namespace Ventouris\UserBundle\Form\Handler;
 
 use FOS\UserBundle\Model\UserInterface;
 use FOS\UserBundle\Form\Model\CheckPassword;

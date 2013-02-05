@@ -1,10 +1,10 @@
 <?php
 
-namespace Cuaround\UserBundle;
+namespace Ventouris\UserBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class CuaroundUserBundle extends Bundle
+class VentourisUserBundle extends Bundle
 {
     public function getParent()
     {

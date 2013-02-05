@@ -8,9 +8,9 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = array(
-            new Cuaround\SiteBundle\CuaroundSiteBundle(),
-            new Cuaround\UserBundle\CuaroundUserBundle(),
-            new Cuaround\AdminBundle\CuaroundAdminBundle(),
+            new Ventouris\SiteBundle\VentourisSiteBundle(),
+            new Ventouris\UserBundle\VentourisUserBundle(),
+            new Ventouris\AdminBundle\VentourisAdminBundle(),
 
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
@@ -23,14 +23,10 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-            // Oh GoogleMaps Bundle
-            new Oh\GoogleMapFormTypeBundle\OhGoogleMapFormTypeBundle(),
             // User Bundle
             new FOS\UserBundle\FOSUserBundle(),
             // JMS
             new JMS\SerializerBundle\JMSSerializerBundle($this),
-            // KNP
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             // Sonata
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),

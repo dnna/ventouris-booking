@@ -1,5 +1,5 @@
 <?php
-namespace Cuaround\AdminBundle\Admin;
+namespace Ventouris\AdminBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Form\FormMapper;
@@ -8,7 +8,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 
-class TransportTypeAdmin extends Admin
+class MusicTypeAdmin extends Admin
 {
     /**
      * @param \Sonata\AdminBundle\Show\ShowMapper $showMapper

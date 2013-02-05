@@ -1,5 +1,5 @@
 <?php
-namespace Cuaround\UserBundle\Wantlet\ORM;
+namespace Ventouris\UserBundle\Wantlet\ORM;
 
 use Doctrine\DBAL\Types\Type;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
@@ -36,7 +36,7 @@ class PointType extends Type {
         }
 
         $data = unpack('x/x/x/x/corder/Ltype/dlat/dlon', $value);
-        return new \Cuaround\UserBundle\Wantlet\ORM\Point($data['lat'], $data['lon']);
+        return new \Ventouris\UserBundle\Wantlet\ORM\Point($data['lat'], $data['lon']);
     }
 
     public function convertToDatabaseValue($value, AbstractPlatform $platform) {

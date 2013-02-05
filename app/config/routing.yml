@@ -23,7 +23,7 @@ fos_user_change_password:
     prefix: /profile
 
 sitebundle:
-    resource: "@CuaroundSiteBundle/Controller"
+    resource: "@VentourisSiteBundle/Controller"
     type:     annotation
 
 admin:
